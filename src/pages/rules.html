@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AnimeVerse Clash | Forum & Wiki Rules</title>
+    <link rel="icon" type="image/png" href="https://i.waifu.pics/Jngw47s.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+              dark: "#1F2933",
+            },
+            fontFamily: {
+              anime: ['"Press Start 2P"', "cursive"],
+              main: ['"Exo 2"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="https://unpkg.com/feather-icons"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="rules" class="bg-dark text-slate-100 font-main antialiased overflow-x-hidden">
+            <header class="border-b border-white/10">
+      <nav class="container mx-auto flex items-center justify-between gap-4 px-6 py-6">
+        <a href="index.html" class="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i data-feather="award" class="text-primary h-8 w-8"></i>
+          <span class="text-2xl font-anime bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">AnimeVerse Clash</span>
+        </a>
+        <ul class="hidden items-center gap-6 text-sm font-semibold text-slate-200 md:flex" data-nav-links>
+          <li><a href="index.html#story" class="transition hover:text-primary" data-i18n="nav.story">Story</a></li>
+          <li><a href="index.html#features" class="transition hover:text-primary" data-i18n="nav.features">Features</a></li>
+          <li><a href="index.html#heroes" class="transition hover:text-primary" data-i18n="nav.heroes">Heroes</a></li>
+          <li><a href="index.html#suggestions" class="transition hover:text-primary" data-i18n="nav.suggestions">Suggestions</a></li>
+          <li><a href="index.html#moderation" class="transition hover:text-primary" data-i18n="nav.moderation">Moderation</a></li>
+          <li><a href="index.html#applications" class="transition hover:text-primary" data-i18n="nav.staff">Staff Paths</a></li>
+          <li><a href="chat.html" class="transition hover:text-primary" data-i18n="nav.chat">Forum Chat</a></li>
+          <li><a href="rules.html" class="transition hover:text-primary" data-i18n="nav.rules">Rules</a></li>
+          <li><a href="news.html" class="transition hover:text-primary" data-i18n="nav.news">News</a></li>
+          <li><a href="changes.html" class="transition hover:text-primary" data-i18n="nav.changes">Live Changes</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <button type="button" data-lang-toggle class="inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
+              <i data-feather="globe" class="h-4 w-4"></i>
+              <span data-current-lang>EN</span>
+              <i data-feather="chevron-down" class="h-3 w-3"></i>
+            </button>
+            <div data-lang-menu class="absolute right-0 mt-2 hidden w-40 space-y-1 rounded-2xl border border-white/10 bg-slate-900/95 p-3 text-xs shadow-xl">
+              <button type="button" data-lang-option="en" class="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-slate-200 hover:bg-white/10">English <span class="text-slate-500">EN</span></button>
+              <button type="button" data-lang-option="ru" class="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-slate-200 hover:bg-white/10">������� <span class="text-slate-500">RU</span></button>
+            </div>
+          </div>
+          <div class="relative hidden md:flex" data-profile-shell>
+            <button type="button" class="hidden items-center justify-center rounded-full border border-white/20 p-1 shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary" data-auth-user data-profile-trigger>
+              <img src="https://i.waifu.pics/Wc5WkuE.png" alt="Profile avatar" class="h-10 w-10 rounded-full object-cover" data-profile-avatar />
+            </button>
+            <div data-profile-menu class="absolute right-0 mt-2 hidden w-52 space-y-2 rounded-2xl border border-white/10 bg-slate-900/95 p-3 text-xs shadow-xl">
+              <div class="rounded-xl bg-white/5 px-3 py-2 text-left">
+                <p class="text-[10px] uppercase tracking-[0.35em] text-slate-500" data-i18n="nav.loggedInAs">Logged in as</p>
+                <p class="text-sm font-semibold text-white" data-profile-name>Agent</p>
+              </div>
+              <button type="button" class="flex w-full items-center justify-center gap-2 rounded-full bg-rose-500/20 px-3 py-2 font-semibold text-rose-200 transition hover:bg-rose-500/30" data-logout>
+                <i data-feather="log-out" class="h-4 w-4"></i>
+                <span data-i18n="nav.logout">Logout</span>
+              </button>
+            </div>
+          </div>
+          <div class="hidden items-center gap-2 md:flex" data-auth-guest>
+            <a href="register.html" class="inline-flex items-center gap-2 rounded-full border border-primary px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary hover:text-dark">
+              <i data-feather="user-plus" class="h-4 w-4"></i>
+              <span data-i18n="nav.register">Register</span>
+            </a>
+            <a href="login.html" class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-dark shadow-lg transition hover:bg-primary/90">
+              <i data-feather="log-in" class="h-4 w-4"></i>
+              <span data-i18n="nav.login">Login</span>
+            </a>
+          </div>
+          <button data-nav-toggle type="button" class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:hidden" aria-label="Toggle navigation" aria-expanded="false">
+            <i data-feather="menu" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="hidden border-t border-white/10 bg-slate-950/90 px-6 py-4 md:hidden" data-nav-menu>
+        <ul class="flex flex-col gap-3 text-sm font-semibold text-slate-200" data-mobile-nav-links>
+          <li><a href="index.html#story" class="transition hover:text-primary" data-i18n="nav.story">Story</a></li>
+          <li><a href="index.html#features" class="transition hover:text-primary" data-i18n="nav.features">Features</a></li>
+          <li><a href="index.html#heroes" class="transition hover:text-primary" data-i18n="nav.heroes">Heroes</a></li>
+          <li><a href="index.html#suggestions" class="transition hover:text-primary" data-i18n="nav.suggestions">Suggestions</a></li>
+          <li><a href="index.html#moderation" class="transition hover:text-primary" data-i18n="nav.moderation">Moderation</a></li>
+          <li><a href="index.html#applications" class="transition hover:text-primary" data-i18n="nav.staff">Staff Paths</a></li>
+          <li><a href="chat.html" class="transition hover:text-primary" data-i18n="nav.chat">Forum Chat</a></li>
+          <li><a href="rules.html" class="transition hover:text-primary" data-i18n="nav.rules">Rules</a></li>
+          <li><a href="news.html" class="transition hover:text-primary" data-i18n="nav.news">News</a></li>
+          <li><a href="changes.html" class="transition hover:text-primary" data-i18n="nav.changes">Live Changes</a></li>
+        </ul>
+        <div class="mt-4 flex flex-col gap-2" data-mobile-auth>
+          <a href="register.html" class="inline-flex items-center gap-2 rounded-full border border-primary px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary hover:text-dark" data-i18n="nav.register">Register</a>
+          <a href="login.html" class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-dark shadow-lg transition hover:bg-primary/90" data-i18n="nav.login">Login</a>
+        </div>
+        <div class="mt-4 hidden items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs text-slate-300" data-mobile-profile>
+          <div>
+            <p class="font-semibold text-white" data-profile-name>Agent</p>
+            <p class="text-[10px] uppercase tracking-[0.35em] text-slate-500" data-i18n="nav.loggedInAs">Logged in as</p>
+          </div>
+          <button type="button" class="rounded-full bg-rose-500/20 px-3 py-1 font-semibold text-rose-200 hover:bg-rose-500/30" data-logout>
+            <span data-i18n="nav.logout">Logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="container mx-auto px-6 py-16 space-y-16">
+      <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="space-y-6">
+          <span class="badge bg-primary/90 text-dark">Council Charter</span>
+          <h1 class="text-4xl font-anime leading-tight md:text-5xl">Stormy Rimuru Community Guidelines</h1>
+          <p class="text-lg text-slate-200">
+            These rules mirror the standards you expect from forums and wikis everywhere. Follow them to keep the AnimeVerse vibrant, welcoming, and spoiler-safe for every pilot.
+          </p>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <article class="glass-panel rounded-3xl border border-white/10 p-5 text-left text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Python/Yotsugi_Ononoki_Reading_Python_Book.jpg" alt="Yotsugi reminding you to be respectful" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h2 class="text-base font-semibold text-white">Respect everyone</h2>
+                  <p>No harassment, hate speech, or personal attacks. Disagreements stay civil.</p>
+                </div>
+              </div>
+            </article>
+            <article class="glass-panel rounded-3xl border border-white/10 p-5 text-left text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/AI/Nico_Robin_Bishop_ML.png" alt="Nico Robin keeping data tidy" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h2 class="text-base font-semibold text-white">Stay on topic</h2>
+                  <p>Use the right categories, cite sources for wiki edits, and avoid spam or duplicate threads.</p>
+                </div>
+              </div>
+            </article>
+            <article class="glass-panel rounded-3xl border border-white/10 p-5 text-left text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Rust/Ai_Mie_Reading_The_Rust_Programming_Language.png" alt="Ai Mie reviewing spoilers" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h2 class="text-base font-semibold text-white">Mind spoilers</h2>
+                  <p>Tag major story beats, event reveals, and datamined content using spoiler formatting.</p>
+                </div>
+              </div>
+            </article>
+            <article class="glass-panel rounded-3xl border border-white/10 p-5 text-left text-sm text-slate-200">
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Go/Frieren_Fern_Hands_On_Software_Engineering_With_Golang.png" alt="Frieren moderating content" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h2 class="text-base font-semibold text-white">Zero tolerance policy</h2>
+                  <p>NSFW, illegal links, phishing, and cheating tools are banned and result in immediate suspension.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="glass-panel rounded-3xl border border-white/10 p-6 shadow-2xl space-y-4 text-sm text-slate-200">
+          <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/AI/Fujiwara_Chika_Deep_Learning.png" alt="Chika showcasing the rulebook" class="h-40 w-full rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+          <h2 class="text-base font-semibold text-white">Posting checklist</h2>
+          <ul class="space-y-2 text-xs">
+            <li>Search before posting to prevent duplicates.</li>
+            <li>Credit artists and data sources when sharing media.</li>
+            <li>Flag problematic content instead of engaging.</li>
+            <li>Keep guides updated and mark outdated info clearly.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="glass-panel rounded-3xl border border-white/10 p-6 shadow-2xl space-y-6">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Rust/Akiyama_Mio_Holding_The_Rust_Programming_Language.png" alt="Mio coordinating moderators" class="h-24 w-24 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+          <div>
+            <h2 class="text-2xl font-semibold text-white">Moderation ladder</h2>
+            <p class="text-sm text-slate-300">AnimeVerse Moderation follows a transparent escalation path. Each tier enforces the same community-first mindset.</p>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-xs text-slate-200">
+          <article class="glass-panel rounded-2xl border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-white">Junior Moderator</h3>
+            <p class="mt-2">Handles basic flag review, welcomes new pilots, and monitors spoilers.</p>
+          </article>
+          <article class="glass-panel rounded-2xl border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-white">Senior Moderator</h3>
+            <p class="mt-2">Coordinates raids, escalates disputes, and curates community spotlights.</p>
+          </article>
+          <article class="glass-panel rounded-2xl border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-white">Junior Administrator</h3>
+            <p class="mt-2">Oversees wiki structure, event hubs, and advanced tooling rollouts.</p>
+          </article>
+          <article class="glass-panel rounded-2xl border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-white">Senior Administrator</h3>
+            <p class="mt-2">Sets policy, approves major updates, and liaises with the council.</p>
+          </article>
+        </div>
+      </section>
+      <section class="glass-panel rounded-3xl border border-white/10 p-6 shadow-2xl space-y-4 text-sm text-slate-200">
+        <h2 class="text-xl font-semibold text-white">Reporting</h2>
+        <p>If you spot a violation, use the in-app report button, ping a moderator in chat, or email <a href="mailto:moderation@animeverse.gg" class="text-secondary hover:underline">moderation@animeverse.gg</a>.</p>
+        <p class="text-xs text-slate-400">Abuse of the report tool is itself a rule violation.</p>
+      </section>
+    </main>
+    <footer class="bg-black/60 py-12">
+      <div class="container mx-auto flex flex-col items-center gap-6 px-6 text-center text-sm text-slate-400">
+        <p>By continuing to use AnimeVerse Clash services you agree to these guidelines.</p>
+        <div class="flex items-center gap-3 text-slate-500">
+          <span>© 2025 AnimeVerse Clash</span>
+          <span>•</span>
+          <a href="register.html" class="hover:text-primary">Register</a>
+          <span>•</span>
+          <a href="news.html" class="hover:text-primary">News</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
