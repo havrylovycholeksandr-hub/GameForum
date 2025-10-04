@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AnimeVerse Clash | Login Portal</title>
+    <link rel="icon" type="image/png" href="https://i.waifu.pics/Jngw47s.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4ECDC4",
+              dark: "#1F2933",
+            },
+            fontFamily: {
+              anime: ['"Press Start 2P"', "cursive"],
+              main: ['"Exo 2"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="https://unpkg.com/feather-icons"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="login" class="bg-dark text-slate-100 font-main antialiased overflow-x-hidden">
+    <div id="vanta-bg" class="fixed inset-0 -z-10"></div>
+            <header class="border-b border-white/10">
+      <nav class="container mx-auto flex items-center justify-between gap-4 px-6 py-6">
+        <a href="index.html" class="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i data-feather="award" class="text-primary h-8 w-8"></i>
+          <span class="text-2xl font-anime bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">AnimeVerse Clash</span>
+        </a>
+        <ul class="hidden items-center gap-6 text-sm font-semibold text-slate-200 md:flex" data-nav-links>
+          <li><a href="index.html#story" class="transition hover:text-primary" data-i18n="nav.story">Story</a></li>
+          <li><a href="index.html#features" class="transition hover:text-primary" data-i18n="nav.features">Features</a></li>
+          <li><a href="index.html#heroes" class="transition hover:text-primary" data-i18n="nav.heroes">Heroes</a></li>
+          <li><a href="index.html#suggestions" class="transition hover:text-primary" data-i18n="nav.suggestions">Suggestions</a></li>
+          <li><a href="index.html#moderation" class="transition hover:text-primary" data-i18n="nav.moderation">Moderation</a></li>
+          <li><a href="index.html#applications" class="transition hover:text-primary" data-i18n="nav.staff">Staff Paths</a></li>
+          <li><a href="chat.html" class="transition hover:text-primary" data-i18n="nav.chat">Forum Chat</a></li>
+          <li><a href="rules.html" class="transition hover:text-primary" data-i18n="nav.rules">Rules</a></li>
+          <li><a href="news.html" class="transition hover:text-primary" data-i18n="nav.news">News</a></li>
+          <li><a href="changes.html" class="transition hover:text-primary" data-i18n="nav.changes">Live Changes</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <button type="button" data-lang-toggle class="inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
+              <i data-feather="globe" class="h-4 w-4"></i>
+              <span data-current-lang>EN</span>
+              <i data-feather="chevron-down" class="h-3 w-3"></i>
+            </button>
+            <div data-lang-menu class="absolute right-0 mt-2 hidden w-40 space-y-1 rounded-2xl border border-white/10 bg-slate-900/95 p-3 text-xs shadow-xl">
+              <button type="button" data-lang-option="en" class="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-slate-200 hover:bg-white/10">English <span class="text-slate-500">EN</span></button>
+              <button type="button" data-lang-option="ru" class="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-slate-200 hover:bg-white/10">������� <span class="text-slate-500">RU</span></button>
+            </div>
+          </div>
+          <div class="relative hidden md:flex" data-profile-shell>
+            <button type="button" class="hidden items-center justify-center rounded-full border border-white/20 p-1 shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary" data-auth-user data-profile-trigger>
+              <img src="https://i.waifu.pics/Wc5WkuE.png" alt="Profile avatar" class="h-10 w-10 rounded-full object-cover" data-profile-avatar />
+            </button>
+            <div data-profile-menu class="absolute right-0 mt-2 hidden w-52 space-y-2 rounded-2xl border border-white/10 bg-slate-900/95 p-3 text-xs shadow-xl">
+              <div class="rounded-xl bg-white/5 px-3 py-2 text-left">
+                <p class="text-[10px] uppercase tracking-[0.35em] text-slate-500" data-i18n="nav.loggedInAs">Logged in as</p>
+                <p class="text-sm font-semibold text-white" data-profile-name>Agent</p>
+              </div>
+              <button type="button" class="flex w-full items-center justify-center gap-2 rounded-full bg-rose-500/20 px-3 py-2 font-semibold text-rose-200 transition hover:bg-rose-500/30" data-logout>
+                <i data-feather="log-out" class="h-4 w-4"></i>
+                <span data-i18n="nav.logout">Logout</span>
+              </button>
+            </div>
+          </div>
+          <div class="hidden items-center gap-2 md:flex" data-auth-guest>
+            <a href="register.html" class="inline-flex items-center gap-2 rounded-full border border-primary px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary hover:text-dark">
+              <i data-feather="user-plus" class="h-4 w-4"></i>
+              <span data-i18n="nav.register">Register</span>
+            </a>
+            <a href="login.html" class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-dark shadow-lg transition hover:bg-primary/90">
+              <i data-feather="log-in" class="h-4 w-4"></i>
+              <span data-i18n="nav.login">Login</span>
+            </a>
+          </div>
+          <button data-nav-toggle type="button" class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:hidden" aria-label="Toggle navigation" aria-expanded="false">
+            <i data-feather="menu" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="hidden border-t border-white/10 bg-slate-950/90 px-6 py-4 md:hidden" data-nav-menu>
+        <ul class="flex flex-col gap-3 text-sm font-semibold text-slate-200" data-mobile-nav-links>
+          <li><a href="index.html#story" class="transition hover:text-primary" data-i18n="nav.story">Story</a></li>
+          <li><a href="index.html#features" class="transition hover:text-primary" data-i18n="nav.features">Features</a></li>
+          <li><a href="index.html#heroes" class="transition hover:text-primary" data-i18n="nav.heroes">Heroes</a></li>
+          <li><a href="index.html#suggestions" class="transition hover:text-primary" data-i18n="nav.suggestions">Suggestions</a></li>
+          <li><a href="index.html#moderation" class="transition hover:text-primary" data-i18n="nav.moderation">Moderation</a></li>
+          <li><a href="index.html#applications" class="transition hover:text-primary" data-i18n="nav.staff">Staff Paths</a></li>
+          <li><a href="chat.html" class="transition hover:text-primary" data-i18n="nav.chat">Forum Chat</a></li>
+          <li><a href="rules.html" class="transition hover:text-primary" data-i18n="nav.rules">Rules</a></li>
+          <li><a href="news.html" class="transition hover:text-primary" data-i18n="nav.news">News</a></li>
+          <li><a href="changes.html" class="transition hover:text-primary" data-i18n="nav.changes">Live Changes</a></li>
+        </ul>
+        <div class="mt-4 flex flex-col gap-2" data-mobile-auth>
+          <a href="register.html" class="inline-flex items-center gap-2 rounded-full border border-primary px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary hover:text-dark" data-i18n="nav.register">Register</a>
+          <a href="login.html" class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-dark shadow-lg transition hover:bg-primary/90" data-i18n="nav.login">Login</a>
+        </div>
+        <div class="mt-4 hidden items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs text-slate-300" data-mobile-profile>
+          <div>
+            <p class="font-semibold text-white" data-profile-name>Agent</p>
+            <p class="text-[10px] uppercase tracking-[0.35em] text-slate-500" data-i18n="nav.loggedInAs">Logged in as</p>
+          </div>
+          <button type="button" class="rounded-full bg-rose-500/20 px-3 py-1 font-semibold text-rose-200 hover:bg-rose-500/30" data-logout>
+            <span data-i18n="nav.logout">Logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container mx-auto px-6 py-16">
+        <div class="grid gap-12 lg:grid-cols-[1fr_0.9fr]">
+          <div class="glass-panel rounded-3xl border border-white/10 p-6 shadow-2xl">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+              <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Go/Rei_Learning_Go.png" alt="Rei preparing login security" class="h-28 w-28 flex-shrink-0 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+              <div class="space-y-2 text-left">
+                <h1 class="text-2xl font-semibold text-white">Return Pilot Sign-in</h1>
+                <p class="text-sm text-slate-300">Enter the credentials you activated via the Storm Surge registration flow. Sessions persist locally for demo purposes.</p>
+              </div>
+            </div>
+            <form class="mt-6 space-y-4" data-auth-login-form>
+              <label class="block text-left text-sm">
+                <span class="text-slate-300">Email</span>
+                <input name="email" type="email" placeholder="nova@animeverse.gg" class="mt-1 w-full rounded-xl border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus:border-primary focus:ring-primary" required />
+              </label>
+              <label class="block text-left text-sm">
+                <span class="text-slate-300">Password</span>
+                <input name="password" type="password" placeholder="demo123" class="mt-1 w-full rounded-xl border-white/10 bg-white/5 text-slate-100 placeholder:text-slate-500 focus:border-primary focus:ring-primary" required />
+              </label>
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" class="h-4 w-4 rounded border-white/20 bg-white/5 text-primary focus:ring-primary" />
+                  <span>Remember this device</span>
+                </label>
+                <a href="register.html" class="text-secondary hover:underline">Need to register?</a>
+              </div>
+              <button type="submit" class="w-full rounded-xl bg-white/10 px-4 py-2 font-semibold text-white transition hover:bg-white/20">
+                Sync Session
+              </button>
+              <p class="text-xs text-emerald-300" data-form-feedback></p>
+            </form>
+            <div class="mt-6 glass-panel rounded-2xl border border-white/10 p-4 text-left text-xs text-slate-300">
+              <p class="font-semibold uppercase tracking-wide text-slate-400">Demo credentials</p>
+              <ul class="mt-2 space-y-1">
+                <li><span class="text-primary font-semibold">Admin:</span> nova@animeverse.gg / demo123</li>
+                <li><span class="text-indigo-300 font-semibold">Senior Mod:</span> aster@animeverse.gg / demo123</li>
+                <li><span class="text-blue-300 font-semibold">Junior Mod:</span> luma@animeverse.gg / demo123</li>
+              </ul>
+            </div>
+          </div>
+          <div class="space-y-8">
+            <article class="glass-panel rounded-3xl border border-white/10 p-6 text-left text-sm text-slate-200">
+              <h2 class="text-base font-semibold text-white">Why sign in?</h2>
+              <p class="mt-2">Logging in enables real-time chat, suggestion voting, moderation queues, and access to staff applications. Everything is stored locally for this interactive showcase.</p>
+            </article>
+            <article class="glass-panel rounded-3xl border border-white/10 p-6 text-left text-sm text-slate-200 space-y-4">
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Rust/Astolfo_Learning_rust.png" alt="Astolfo keeping the lobby safe" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h3 class="text-base font-semibold text-white">Moderator Sandbox</h3>
+                  <p>Log in with demo moderator credentials to resolve flags, review suggestions, and approve applications.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/AI/Minako_Aino_ESL_Hastie.png" alt="Minako analyzing logs" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h3 class="text-base font-semibold text-white">Downloadable Logs</h3>
+                  <p>When you register, a ledger text file is generated capturing all active pilots for easy record keeping.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <img src="https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/Python/Anya_with_python_book.png" alt="Anya celebrating login" class="h-16 w-16 rounded-2xl border border-white/10 object-cover shadow-lg" loading="lazy" decoding="async" />
+                <div>
+                  <h3 class="text-base font-semibold text-white">Email Confirmation</h3>
+                  <p>Accounts stay locked until the Accept button is pressed in the simulated email, keeping access under your control.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-black/60 py-12">
+      <div class="container mx-auto flex flex-col items-center gap-6 px-6 text-center text-sm text-slate-400">
+        <p>Forgot your credentials? Re-register via the <a href="register.html" class="text-primary hover:underline">registration hub</a>; this sandbox uses local storage only.</p>
+        <div class="flex items-center gap-3 text-slate-500">
+          <span>© 2025 AnimeVerse Clash</span>
+          <span>•</span>
+          <a href="rules.html" class="hover:text-primary">Rules</a>
+          <span>•</span>
+          <a href="news.html" class="hover:text-primary">News</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
